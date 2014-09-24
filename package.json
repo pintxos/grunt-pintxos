@@ -1,24 +1,28 @@
 {
-	"name": "pintxos-grunt",
-	"version": "1.0.0",
-	"main": "index.js",
-	"dependencies": {
-		"grunt-contrib-jshint": "^0.10.0",
-		"grunt-karma": "^0.8.3",
-		"karma": "^0.12.21",
-		"karma-chrome-launcher": "^0.1.4",
-		"karma-jasmine": "^0.1.5",
-		"karma-phantomjs-launcher": "^0.1.4",
-		"load-grunt-tasks": "^0.6.0",
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/pintxos/pintxos-grunt.git"
-	},
-	"author": "Jelle Versele",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/pintxos/pintxos-grunt/issues"
-	},
-	"homepage": "https://github.com/pintxos/pintxos-grunt"
+  "name": "pintxos-grunt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-karma": "^0.8.3",
+    "karma": "^0.12.21",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "load-grunt-tasks": "^0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pintxos/pintxos-grunt.git"
+  },
+  "author": "Jelle Versele",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pintxos/pintxos-grunt/issues"
+  },
+  "homepage": "https://github.com/pintxos/pintxos-grunt",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1"
+  }
 }
