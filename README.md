@@ -3,12 +3,14 @@
 Shared grunt config for all Pintxos components.
 
 ## Getting started
-‘‘‘
+
+```
 npm install grunt-pintxos --save-dev
-‘‘‘
+```
 
 ## Example Gruntfile
-‘‘‘
+
+```
 var config = {
 	testDependencies: [
 		'bower_components/jquery/dist/jquery.js',
@@ -21,4 +23,4 @@ var config = {
 };
 
 module.exports = require('grunt-pintxos')(config);
-‘‘‘
+```
