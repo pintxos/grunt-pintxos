@@ -10,7 +10,7 @@ npm install grunt-pintxos --save-dev
 
 ## Example Gruntfile
 
-```
+``` javascript
 var config = {
 	testDependencies: [
 		'bower_components/jquery/dist/jquery.js',
