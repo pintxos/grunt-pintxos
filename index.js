@@ -1,17 +1,26 @@
-module.exports = function (config) {
+module.exports = function (options) {
 
 	'use strict';
 
 	return function (grunt) {
 
-		require('load-grunt-tasks')(grunt);
+		var pluginName, tasks;
+
+		tasks = [
+			'grunt-contrib-watch',
+			'grunt-contrib-jshint',
+			'grunt-karma',
+			'grunt-concurrent'
+		];
+
+		pluginName = 'grunt-pintxos';
 
 		grunt.initConfig({
 
 			karma: {
 				options: {
 					basePath: '',
-					files: config.testDependencies,
+					files: options.testDependencies,
 					frameworks: [
 						'jasmine'
 					]
@@ -22,6 +31,15 @@ module.exports = function (config) {
 				ci: {
 					browsers: ['PhantomJS'],
 					singleRun: true
+				}
+			},
+
+			concurrent: {
+				dev: {
+					tasks: ['watch', 'karma:dev'],
+					options: {
+						logConcurrentOutput: true
+					}
 				}
 			},
 
@@ -39,13 +57,19 @@ module.exports = function (config) {
 			},
 
 			watch: {
-				files: '**/*.js',
+				files: '*.js',
 				tasks: ['jshint']
 			}
 
 		});
 
-		grunt.registerTask('default', ['watch', 'karma:dev']);
+		// load Grunt plugins from the plugin's node_modules/ dir instead of from the
+		// Gruntfile's node_module dir. This way we can specify the dependencies in the package.json of this plugin.
+		for (var i = 0; i < tasks.length; i ++ ) {
+			grunt.loadTasks('node_modules/'+ pluginName +'/node_modules/' + tasks[i] + '/tasks');
+		}
+
+		grunt.registerTask('default', ['concurrent:dev']);
 		grunt.registerTask('test', ['jshint', 'karma:ci']);
 
 	};
